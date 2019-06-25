@@ -9,11 +9,11 @@ class Application
     req = Rack::Request.new(env)
  
     if req.path.match(/item/)
-        binding.pry
-        item_price = req.path.split("/items/").last
-        item = @@items.find{|i| i.price == item_price}
-        
-        resp.write item.price
+      binding.pry
+      item_price = req.path.split("/items/").last
+      item = @@items.find{|i| i.price == item_price}
+      
+      resp.write item.price
     else
       resp.write "Route not found"
       resp.status = 404
