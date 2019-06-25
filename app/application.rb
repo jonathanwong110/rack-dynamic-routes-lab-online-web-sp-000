@@ -6,9 +6,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
  
-    if req.path=="/item"
-      resp.write "You requested the songs"
-    elsif req.path.match(/items/)
+    if req.path.match(/items/)
       item_price = req.path.split("/items/").last
       item = @@items.find{|i| i.price == item_price}
       
