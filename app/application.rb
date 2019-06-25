@@ -10,7 +10,7 @@ class Application
  
     if req.path=="/item"
       resp.write "You requested the songs"
-      if req.path.match(/items/)
+      if req.path.match(/item/)
         binding.pry
         item_price = req.path.split("/items/").last
         item = @@items.find{|i| i.price == item_price}
