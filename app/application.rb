@@ -13,7 +13,6 @@ class Application
         item = @@items.find{|i| i.price == item_price}
         
         resp.write item.price
-
       end
     else
       resp.write "Route not found"
